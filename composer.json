@@ -1,0 +1,22 @@
+{
+    "name": "yapro/history-data",
+    "version": "1.0",
+    "require": {
+        "php": "7.4.*",
+        "ext-pdo_sqlite": "*",
+        "yapro/helpers": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "YaPro\\HistoryData\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YaPro\\HistoryData\\Tests\\": "tests/"
+        }
+    }
+}
