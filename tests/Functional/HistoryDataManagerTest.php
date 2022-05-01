@@ -24,7 +24,7 @@ class HistoryDataManagerTest extends TestCase
         self::$pdo->exec('DELETE FROM ' . HistoryDataManager::TABLE_NAME . ';');
 
         $json = '{"title": "title1", "comments": [{"message": "str1"}, {"message": "str2"}]}';
-        self::$historyDataManager->add('insert', 'table_name', $json);
+        self::$historyDataManager->add('insert', 'table_name', '123', $json);
 
         $sth = self::$pdo->prepare("SELECT * FROM " . HistoryDataManager::TABLE_NAME);
         $sth->execute();
@@ -35,7 +35,8 @@ class HistoryDataManagerTest extends TestCase
             'ipAddress' => 'undefined',
             'userAgent' => 'undefined',
             'operationName' => 'insert',
-            'tableName' => 'table_name',
+            'entityName' => 'table_name',
+            'entityId' => '123',
             'jsonData' => $json,
         ]);
     }

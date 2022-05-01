@@ -24,10 +24,11 @@ class HistoryDataManager
 
     /**
      * @param string $operationName
-     * @param string $tableName
+     * @param string $entityName
+     * @param string|int $entityId
      * @param string|array $json
      */
-    public function add(string $operationName, string $tableName, $json): void
+    public function add(string $operationName, string $entityName, $entityId, $json): void
     {
         if (is_array($json)) {
             $json = $this->jsonHelper->jsonEncode($json);
@@ -39,20 +40,23 @@ class HistoryDataManager
                 ipAddress,
                 userAgent,
                 operationName,
-                tableName,
+                entityName,
+                entityId,
                 jsonData
             ) VALUES (
                 :ipAddress,
                 :userAgent,
                 :operationName,
-                :tableName,
+                :entityName,
+                :entityId,
                 :jsonData
             )");
         $stmt->execute([
             ':ipAddress' => $this->getIpAddress(),
             ':userAgent' => $this->getUserAgent(),
             ':operationName' => $operationName,
-            ':tableName' => $tableName,
+            ':entityName' => $entityName,
+            ':entityId' => $entityId,
             ':jsonData' => $json,
         ]);
     }

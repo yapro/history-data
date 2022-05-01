@@ -36,7 +36,8 @@ create table history_data
     ipAddress TEXT not null,
     userAgent TEXT not null,
     operationName TEXT not null,
-    tableName TEXT not null,
+    entityName TEXT not null,
+    entityId TEXT not null,
     jsonData TEXT not null
 );
 ```
