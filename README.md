@@ -41,3 +41,7 @@ create table history_data
     jsonData TEXT not null
 );
 ```
+And don`t forgеt, almost every sqlite table has a hidden AUTOINCREMENT column [rowid](https://www.sqlite.org/autoinc.html):
+```sql92
+SELECT rowid, * FROM history_data
+```
