@@ -22,11 +22,14 @@ Add to config/services.yaml
     YaPro\HistoryData\HistoryDataManager:
       arguments: ['@yapro.pdo.sqlite',]
 ```
+File [mydb.sq3](mydb.sq3) is ready for use.
 
-By default, we use mydb.sq3 file. If you want to have own sqlite db - make it:
+But, if you want to have own sqlite db - make it:
 ```shell
-touch $(pwd)/mydb.sq3
+sudo apt install sqlite3
+sqlite3 mydb.sq3
 ```
+Tip: https://www.sqlite.org/cli.html
 
 And make the table in sqlite db:
 ```sqlite
