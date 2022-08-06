@@ -2,7 +2,7 @@
     "name": "yapro/history-data",
     "version": "1.0",
     "require": {
-        "php": "7.4.*",
+        "php": ">=7.4.0",
         "ext-pdo_sqlite": "*",
         "yapro/helpers": "*"
     },
